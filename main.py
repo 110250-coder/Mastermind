@@ -26,10 +26,31 @@ while loop:
   tries = tries + 1
 
   if len(poging) != 4 :
+    print(' ')
     print('De code heeft 4 letters nodig! Probeer opnieuw!')
     print(' ')
     if 10 - tries == 1 :
+      print(' ')
       print('Je hebt nog 1 kans om de code te raden')
+      print(' ')
+      continue
     else :
+      print(' ')
       print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
-    continue
+      print(' ')
+      continue
+  for i in range(4):
+   if poging[i] not in kleuren :
+      print(' ')
+      print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opniew!')
+      print(' ')
+      if 10 - tries == 1 :
+        print(' ')
+        print('Je hebt nog 1 kans om de code te raden')
+        print(' ')
+        break
+      else :
+        print(' ')
+        print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+        print(' ')
+        break
