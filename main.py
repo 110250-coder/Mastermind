@@ -18,5 +18,15 @@ kleuren = ['r', 'b', 'g', 'c', 'p', 'm']
 
 volgorde = random.sample(kleuren,4)
 
+tries = 0
+loop = True
 
+while loop:
+  poging = input('')
+  tries = tries + 1
 
+  if len(poging) != 4 :
+    print('De code heeft 4 letters nodig! Probeer opnieuw!')
+    print(' ')
+    print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+    continue
