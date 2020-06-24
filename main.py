@@ -22,6 +22,8 @@ tries = 0
 loop = True
 
 while loop:
+  goedekleur = ''
+  kleurpoging = ''
   poging = input('')
   tries = tries + 1
 
@@ -54,3 +56,10 @@ while loop:
         print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
         print(' ')
         break
+  if goedekleur != 'zzzz' :
+    for i in range(4):
+      if poging[i] == volgorde[i]:
+       goedekleur += 'z'
+      if poging[i] != volgorde[i] and poging[i] in volgorde :
+       kleurpoging += 'w'
+    print(goedekleur + kleurpoging)
