@@ -28,5 +28,8 @@ while loop:
   if len(poging) != 4 :
     print('De code heeft 4 letters nodig! Probeer opnieuw!')
     print(' ')
-    print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+    if 10 - tries == 1 :
+      print('Je hebt nog 1 kans om de code te raden')
+    else :
+      print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
     continue
