@@ -36,7 +36,7 @@ while loop:
       print('Je hebt nog 1 kans om de code te raden')
       print(' ')
       continue
-    else :
+    else:
       print(' ')
       print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
       print(' ')
@@ -51,7 +51,7 @@ while loop:
         print('Je hebt nog 1 kans om de code te raden')
         print(' ')
         break
-      else :
+      else:
         print(' ')
         print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
         print(' ')
@@ -63,3 +63,4 @@ while loop:
       if poging[i] != volgorde[i] and poging[i] in volgorde :
        kleurpoging += 'w'
     print(goedekleur + kleurpoging)
+    print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
