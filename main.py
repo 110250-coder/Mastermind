@@ -31,31 +31,26 @@ while loop:
     print(' ')
     print('De code heeft 4 letters nodig! Probeer opnieuw!')
     print(' ')
+  def kansen() :
     if 10 - tries == 1 :
       print(' ')
       print('Je hebt nog 1 kans om de code te raden')
       print(' ')
-      continue
+
     else :
       print(' ')
       print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
       print(' ')
-      continue
+      
+  kansen()
+
   for i in range(4):
    if poging[i] not in kleuren :
       print(' ')
-      print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opniew!')
+      print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opnieuw!')
       print(' ')
-      if 10 - tries == 1 :
-        print(' ')
-        print('Je hebt nog 1 kans om de code te raden')
-        print(' ')
-        break
-      else :
-        print(' ')
-        print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
-        print(' ')
-        break
+      break
+  
   if goedekleur != 'zzzz' :
     for i in range(4):
       if poging[i] == volgorde[i]:
@@ -63,3 +58,6 @@ while loop:
       if poging[i] != volgorde[i] and poging[i] in volgorde :
        kleurpoging += 'w'
     print(goedekleur + kleurpoging)
+    kansen()
+
+
