@@ -1,10 +1,12 @@
 import random
-from random import randint
-
+#
+# While loop voor Eindespel
+#
 while True :
 
-
-
+#
+# Introductie
+#
   print(' ')
   print("Beste speler welkom bij mastermind!")
   print(' ')
@@ -13,7 +15,9 @@ while True :
   print(' ')
   print(' ')
 
-
+#
+# definitie variabelen
+#
   kleuren = ['r', 'b', 'g', 'c', 'p', 'm']
 
   volgorde = random.sample(kleuren,4)
@@ -21,23 +25,51 @@ while True :
   tries = 0
   loop = True
 
+#
+# While loop zolang we het spel spelen
+#
   while loop:
     goedekleur = ''
     kleurpoging = ''
     poging = input('').lower()
     tries = tries + 1
-
+#
+# als poging niet gelijk 4 of bevat nummers
+#
     if len(poging) != 4 or not poging.isalpha():
       print(' ')
       print('De code heeft 4 letters nodig en mag geen cijfers bevatten!\n\n Probeer opnieuw!')
       print(' ')
-      continue
+#
+# Aantal pogingen berekenen
+#
+      if 10 - tries == 1 :
+        print(' ')
+        print('Je hebt nog 1 kans om de code te raden')
+        print(' ')
+        continue
+      elif  10 - tries == 0 :
+        print(' ')
+        print('Game over')
+        print('Helaas je hebt het niet geraden')
+        break
+      else :
+        print(' ')
+        print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+        print(' ')
+        continue
+#
+# zitten de juiste kleuren erin
+#
     for i in range(4):
       if poging[i] not in kleuren :
         print(' ')
-        print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opniew!')
+        print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opnieuw!')
         print(' ')
         break
+#
+# Goed en/of goede plaats
+#
     if goedekleur != 'zzzz' :
       for i in range(4):
         if poging[i] == volgorde[i]:
@@ -45,6 +77,9 @@ while True :
         if poging[i] != volgorde[i] and poging[i] in    volgorde :
          kleurpoging += 'w'
       print(goedekleur + kleurpoging)
+#
+# Aantal pogingen berekenen
+#
       if 10 - tries == 1 :
         print(' ')
         print('Je hebt nog 1 kans om de code te raden')
@@ -61,7 +96,9 @@ while True :
         print(' ')
         continue
 
-
+#
+# Zullen we nog een keertje spelen?
+#
   eindespel = input('Wil je het nog een keer proberen (j/n)').lower()
   if eindespel == 'n':
     print ('Bedankt voor het spelen. Tot ziens!')
