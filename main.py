@@ -28,11 +28,12 @@ while True :
 #
 # While loop zolang we het spel spelen
 #
-  while loop:
+  while loop: # zolang loop is true
     goedekleur = ''
     kleurpoging = ''
     poging = input('').lower()
     tries = tries + 1
+# Concatenation    
     a = 'Je hebt nog ' 
     b = ' kansen om de code te raden!'
     c = ' kans om de code te raden!'
@@ -51,7 +52,7 @@ while True :
 #
       if 10 - tries == 1 :
         print(' ')
-        print(e)
+        print(e) #concatenation
         print(' ')
         continue
       elif  10 - tries == 0 :
@@ -61,7 +62,7 @@ while True :
         break
       else :
         print(' ')
-        print(d)
+        print(d) #concatenation
         print(' ')
         continue
 #
@@ -83,15 +84,16 @@ while True :
         if poging[i] != volgorde[i] and poging[i] in    volgorde :
          kleurpoging += 'w'
       print(goedekleur + kleurpoging)
-    if goedekleur == 'zzzz' : 
-      print('GEFELICITEERD je hebt het geraden!')
-      break
+# Alle kleuren goed!      
+      if goedekleur == 'zzzz' : 
+       print('GEFELICITEERD je hebt het geraden!')
+       break
 #
 # Aantal pogingen berekenen
 #
       if 10 - tries == 1 :
         print(' ')
-        print(e)
+        print(e) #concatenation
         print(' ')
         continue
       elif  10 - tries == 0 :
@@ -101,7 +103,7 @@ while True :
         break
       else :
         print(' ')
-        print(d)
+        print(d) #concatenation
         print(' ')
         continue
 
