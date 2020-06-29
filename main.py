@@ -33,6 +33,11 @@ while True :
     kleurpoging = ''
     poging = input('').lower()
     tries = tries + 1
+    a = 'Je hebt nog ' 
+    b = ' kansen om de code te raden!'
+    c = ' kans om de code te raden!'
+    d = a + str(10 - tries) + b
+    e = a + str(10 - tries) + c
 #
 # als poging niet gelijk 4 of bevat nummers
 #
@@ -40,12 +45,13 @@ while True :
       print(' ')
       print('De code heeft 4 letters nodig en mag geen cijfers bevatten!\n\n Probeer opnieuw!')
       print(' ')
+    
 #
 # Aantal pogingen berekenen
 #
       if 10 - tries == 1 :
         print(' ')
-        print('Je hebt nog 1 kans om de code te raden')
+        print(e)
         print(' ')
         continue
       elif  10 - tries == 0 :
@@ -55,7 +61,7 @@ while True :
         break
       else :
         print(' ')
-        print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+        print(d)
         print(' ')
         continue
 #
@@ -77,12 +83,15 @@ while True :
         if poging[i] != volgorde[i] and poging[i] in    volgorde :
          kleurpoging += 'w'
       print(goedekleur + kleurpoging)
+    if goedekleur == 'zzzz' : 
+      print('GEFELICITEERD je hebt het geraden!')
+      break
 #
 # Aantal pogingen berekenen
 #
       if 10 - tries == 1 :
         print(' ')
-        print('Je hebt nog 1 kans om de code te raden')
+        print(e)
         print(' ')
         continue
       elif  10 - tries == 0 :
@@ -92,7 +101,7 @@ while True :
         break
       else :
         print(' ')
-        print('Je hebt nog ' + str(10 - tries) + ' kansen om de code te raden!')
+        print(d)
         print(' ')
         continue
 
