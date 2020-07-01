@@ -1,5 +1,6 @@
 import random
-#from termcolor import colored, cprint
+import colorama
+from colorama import Fore,Style
 #
 # While loop voor Eindespel
 #
@@ -9,9 +10,9 @@ while True :
 # Introductie
 #
   print(' ')
-  print("Beste speler welkom bij mastermind!")
+  print('Beste speler welkom bij mastermind!')
   print(' ')
-  print("Bij dit spel kiest de computer 4 van de 6 kleuren (Rood, Blauw, Groen, Citroengeel, Paars, Magenta) en jij moet raden welke 4 kleuren er gekozen zijn en op welke volgorde ze staan.\n\nJe krijgt 10 beurten, bij elke beurt kies je de voorste letter van een kleur naar keuze (een kleur kan meerdere keren gebruikt worden) en in een volgorde naar keuze. Als je alles goed hebt heb je gewonnen.\n\nZo niet krijg je hints het aantal “Z’s” (van Zwart) geeft aan dat er een gekozen kleur in de code voorkomt en op de juiste positie staat. Het aantal “W’s” (van Wit) geeft het aantal keer dat een kleur voorkomt, maar die niet op de juiste positie staan aan.")
+  print('Bij dit spel kiest de computer 4 van de 6 kleuren (Rood, Blauw, Groen, Citroengeel, Paars, Magenta) en jij moet raden welke 4 kleuren er gekozen zijn en op welke volgorde ze staan.\n\nJe krijgt 10 beurten, bij elke beurt kies je de voorste letter van een kleur naar keuze (een kleur kan meerdere keren gebruikt worden) en in een volgorde naar keuze. Als je alles goed hebt heb je gewonnen.\n\nZo niet krijg je hints het aantal “Z’s" (van Zwart) geeft aan dat er een gekozen kleur in de code voorkomt en op de juiste positie staat. Het aantal “W’s” (van Wit) geeft het aantal keer dat een kleur voorkomt, maar die niet op de juiste positie staan aan.')
   print(' ')
   print(' ')
   print(' ')
@@ -52,7 +53,8 @@ while True :
 #
     if len(poging) != 4 or not poging.isalpha():
       print(' ')
-      print('De code heeft 4 letters nodig en mag geen cijfers bevatten!\n\n Probeer opnieuw!')
+      print(Fore.RED +'De code heeft 4 letters nodig en mag geen cijfers bevatten!\n\n Probeer opnieuw!')
+      print(Style.RESET_ALL)
       print(' ')
 #
 # Aantal resterende pogingen berekenen bij foute invoer
@@ -64,8 +66,8 @@ while True :
         continue
       elif  10 - tries == 0 :
         print(' ')
-        print('Game over')
         print('Helaas je hebt het niet geraden')
+        print(' ')
         break
       else :
         print(' ')
@@ -78,7 +80,7 @@ while True :
     for i in range(4):
       if poging[i] not in kleuren :
         print(' ')
-        print('Je kan alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opnieuw!')
+        print('Je mag alleen de kleuren Paars, Blauw, Groen, Magenta, Rood en Citroengeel gebruiken! Probeer opnieuw!')
         print(' ')
         break
 #
@@ -124,7 +126,7 @@ while True :
     break # ga uit de while true loop
   else :
     print(' ')
-    print ("Laten we nog een keer spelen ")
+    print ('Laten we nog een keer spelen')
     print(' ')
     continue # blijf binnen de while true loop en speel opnieuw
     
