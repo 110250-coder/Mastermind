@@ -1,4 +1,5 @@
 import random
+#from termcolor import colored, cprint
 #
 # While loop voor Eindespel
 #
@@ -14,17 +15,19 @@ while True :
   print(' ')
   print(' ')
   print(' ')
-
+  #
+  # Functie ophogen van tries
+  #
+  def ophogen():
+    global tries 
+    tries = tries + 1
 #
-# definitie variabelen
+# definitie van alle variabelen
 #
   kleuren = ['r', 'b', 'g', 'c', 'p', 'm']
-
   volgorde = random.sample(kleuren,4)
-
   tries = 0
   loop = True
-
 #
 # While loop zolang we het spel spelen
 #
@@ -32,8 +35,13 @@ while True :
     goedekleur = ''
     kleurpoging = ''
     poging = input('').lower()
-    tries = tries + 1
+#
+# Functie ophogen aanroepen om tries met 1 op te hogen
+#
+    ophogen()
+#
 # Concatenation    
+#
     a = 'Je hebt nog ' 
     b = ' kansen om de code te raden!'
     c = ' kans om de code te raden!'
@@ -46,9 +54,8 @@ while True :
       print(' ')
       print('De code heeft 4 letters nodig en mag geen cijfers bevatten!\n\n Probeer opnieuw!')
       print(' ')
-    
 #
-# Aantal pogingen berekenen
+# Aantal resterende pogingen berekenen bij foute invoer
 #
       if 10 - tries == 1 :
         print(' ')
@@ -75,7 +82,7 @@ while True :
         print(' ')
         break
 #
-# Goed en/of goede plaats
+# Goed en/of goede plaats bepalen
 #
     if goedekleur != 'zzzz' :
       for i in range(4):
@@ -87,9 +94,9 @@ while True :
 # Alle kleuren goed!      
       if goedekleur == 'zzzz' : 
        print('GEFELICITEERD je hebt het geraden!')
-       break
+       break # ga uit de while loop om naar eindespel te gaan
 #
-# Aantal pogingen berekenen
+# Aantal resterende pogingen berekenen bij juiste invoer
 #
       if 10 - tries == 1 :
         print(' ')
@@ -106,15 +113,18 @@ while True :
         print(d) #concatenation
         print(' ')
         continue
-
 #
 # Zullen we nog een keertje spelen?
 #
   eindespel = input('Wil je het nog een keer proberen (j/n)').lower()
   if eindespel == 'n':
+    print(' ')
     print ('Bedankt voor het spelen. Tot ziens!')
-    break
+    print(' ')
+    break # ga uit de while true loop
   else :
+    print(' ')
     print ("Laten we nog een keer spelen ")
-    continue
+    print(' ')
+    continue # blijf binnen de while true loop en speel opnieuw
     
